@@ -76,7 +76,7 @@ public class HivoltsGameBoard extends JFrame implements KeyListener
         	 you.paint(g);
          }
          else if (moveDown == true) {
-        	 if (you.returnyCorn() != 925) {
+        	 if (you.returnxCorn() != 925) {
         		 you.moveDown();
         	 }
         	 moveDown = false;
