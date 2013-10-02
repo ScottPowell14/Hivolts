@@ -1,1 +1,56 @@
-// Mhos class
+import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.util.Random;
+public class Mhos extends JPanel
+{
+   private int xCorn;
+   private int yCorn;
+   private Random generator;
+
+   public Mhos() 
+   {
+      setSize(1100, 1100);
+      repaint();
+   }
+
+   public void paint(Graphics g) 
+   {
+	    generator = new Random();
+      xCorn = 100 + 75 * generator.nextInt(12);
+      yCorn = 100 + 75 * generator.nextInt(12);
+      
+
+       //when we randomize, we'll set these to other values based
+
+       //on randomization, for now we'll let them be 100 so that
+
+       //they fit in the first box
+      
+      g.setColor(Color.ORANGE);
+      g.fillOval(xCorn + 5, yCorn + 5, 65, 65);
+      g.setColor(Color.BLACK);
+      g.fillArc(xCorn + 15, yCorn + 39, 45, 45, 35, 110);
+      g.fillRect(xCorn + 23, yCorn + 22, 9, 9);
+      g.fillRect(xCorn + 43, yCorn + 22, 9, 9);
+      g.setColor(Color.ORANGE);
+      g.fillOval(xCorn + 20, yCorn + 46, 35, 25);
+      
+   }
+
+  
+
+  //these methods are useful for when we want to know the
+
+  //location of the mhos
+   public int returnxCorn() 
+   {
+      return xCorn;
+   }
+
+  
+   public int returnyCorn() 
+   {
+      return yCorn;
+   }
+}
