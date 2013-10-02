@@ -1,0 +1,119 @@
+// Electric Fence Class
+
+public void paint(Graphics g)
+	{
+	
+		Graphics2D g2 = (Graphics2D) g;
+		
+		
+		
+		
+		
+		
+		g2.setStroke(new BasicStroke (5));	 
+		g2.setColor(Color.BLACK);
+		for (int i = 0; i < 13; i++)
+         {
+
+              g2.drawLine(100 + i * 75, 100, 100 + i * 75, 1000);
+              g2.drawLine(100, 100 + i * 75, 1000, 100 + i  *75);
+
+         }
+		
+		// Borders of Electric Fence
+		// Top row of electric fence
+		
+		g2.setColor(Color.ORANGE);
+		
+		for (int k = 0; k < 12; k = k +1)
+		{
+			g2.setStroke(new BasicStroke ( 8));
+			g2.drawLine(100 + (k * 75), 50, 100 + (k * 75), 100);
+			g2.drawLine(175 + (k * 75), 50, 175 + (k * 75), 100);
+			
+		// Electricity of Electric Fence
+		for (int n = 0; n < 3; n = n + 1)
+			{
+				g2.setStroke(new BasicStroke ( 3));
+				g2.drawLine(100 + (k * 75), 55 +  (n * 16), 175 + (k * 75), 55 + (n * 16));
+				
+				g2.setStroke(new BasicStroke (4));
+				g2.drawLine(120 + (k * 75), 55 + (n * 16), 120 + (k * 75), 50 + (n * 16));
+				g2.drawLine(135 + (k * 75), 55 + (n * 16), 135 + (k * 75), 60 + (n * 16));
+				g2.drawLine(150 + (k * 75), 55 + (n * 16), 150 + (k * 75), 50 + (n * 16));
+				
+			}
+		}
+		
+		// Bottom row of electric fence
+		for (int k = 0; k < 12; k = k +1)
+		{
+		g2.setStroke(new BasicStroke ( 8));
+		// Borders of Electric Fence
+		g2.drawLine(100 + (k * 75), 1050, 100 + (k * 75), 1000);
+		g2.drawLine(175 + (k * 75), 1050, 175 + (k * 75), 1000);
+		
+		// Electricity of Electric Fence
+		for (int n = 0; n < 3; n = n + 1)
+			{
+				g2.setStroke(new BasicStroke ( 3));
+				g2.drawLine(100 + (k * 75), 1045 - (n * 16), 175 + (k * 75), 1045 - (n * 16));
+				
+				g2.setStroke(new BasicStroke ( 4));
+				g2.drawLine(120 + (k * 75), 1045 - (n * 16), 120 + (k * 75), 1040 - (n * 16));
+				g2.drawLine(135 + (k * 75), 1045 - (n * 16), 135 + (k * 75), 1050 - (n * 16));
+				g2.drawLine(150 + (k * 75), 1045 - (n * 16), 150 + (k * 75), 1040 - (n * 16));
+				
+			}
+		}
+		
+		// Left column of electric fence
+		
+		for (int k = 0; k < 12; k = k +1)
+		{
+		g2.setStroke(new BasicStroke ( 8));
+		// Borders of Electric Fence
+		g2.drawLine(100, 100 + (k * 75), 50, 100 + (k * 75));
+		g2.drawLine(100, 175 + (k * 75), 50, 175 + (k * 75));
+		
+		// Electricity of Electric Fence
+		for (int n = 0; n < 3; n = n + 1)
+			{
+				g2.setStroke(new BasicStroke ( 3));
+				g2.drawLine(60 + (n * 16), 100 + (k * 75), 60 + (n * 16), 175 + (k * 75));
+				
+				g2.setStroke(new BasicStroke ( 4));
+				g2.drawLine(60 + (n * 16), 115 + (k * 75), 55 + (n * 16), 115 + (k * 75));
+				g2.drawLine(60 + (n * 16), 135 + (k * 75), 65 + ( n * 16), 135 + (k * 75));
+				g2.drawLine(60 + (n * 16), 155 + (k * 75), 55 + ( n * 16), 155 + (k * 75));
+				
+			}
+		}
+		
+		// Right column of electric fence
+		
+		for (int k = 0; k < 12; k = k +1)
+		{
+		g2.setStroke(new BasicStroke (8));
+		// Borders of Electric Fence
+		g2.drawLine(1050, 100 + (k * 75), 1000, 100 + (k * 75));
+		g2.drawLine(1050, 175 + (k * 75), 1000, 175 + (k * 75));
+		
+		// Electricity of Electric Fence
+		for (int n = 0; n < 3; n = n + 1)
+			{
+				g2.setStroke(new BasicStroke ( 3));
+				g2.drawLine(1010 + (n * 16), 100 + (k * 75), 1010 + (n * 16), 175 + (k *75));
+				
+				g2.setStroke(new BasicStroke (4));
+				g2.drawLine(1010 + (n * 16), 115 + (k * 75), 1015 + (n * 16), 115 + (k* 75));
+				g2.drawLine(1010 + (n * 16), 135 + (k * 75), 1005 + (n * 16), 135 + (k * 75));
+				g2.drawLine(1010 + (n * 16), 155 + (k * 75), 1015 + (n * 16), 155 + (k * 75));
+			
+			}
+		}
+		
+		
+	}
+
+}
