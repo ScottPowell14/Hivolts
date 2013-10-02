@@ -101,38 +101,47 @@ public class HivoltsGameBoard extends JFrame implements KeyListener
 
  @Override
 
- 	public void keyReleased(KeyEvent r) {
-	 	int key = r.getKeyCode();
-	 	switch (key){
-	 	case KeyEvent.VK_LEFT:
-	 	case 'q':
-	 		moveLeft = true;
-	 		firstPaint = false;
-	 		you.firstPaint = false;
-	 		repaint();
-	 	case KeyEvent.VK_UP:
-	 		moveUp = true;
-	 		firstPaint = false;
-	 		you.firstPaint = false;
-	 		repaint();
-	 	case KeyEvent.VK_DOWN:
-	 		moveDown = true;
-	 		firstPaint = false;
-	 		you.firstPaint = false;
-	 		repaint();
-	 	case KeyEvent.VK_RIGHT:
-	 		moveRight = true;
-	 		firstPaint = false;
-	 		you.firstPaint = false;
-	 		repaint();
-	 	}
- 	}
+public void keyReleased(KeyEvent r) {
+	 int key = r.getKeyCode();
+	 switch (key){
+	 case KeyEvent.VK_LEFT:
+	 case 'a':
+		 moveLeft = true;
+		 repaint();
+		 break;
+	 case KeyEvent.VK_UP:
+	 case 'w':
+		 moveUp = true;
+		 repaint();
+		 break;
+	 case KeyEvent.VK_DOWN:
+	 case 'x':
+		 moveDown = true;
+		 repaint();
+		 break;
+	 case KeyEvent.VK_RIGHT:
+	 case 'd':
+		 moveRight = true;
+		 repaint();
+		 break;
+	 case 'j':
+	 	jump = true;
+	 	repaint();
+	 	break;
+	 case 'q':
+		 moveRight = true;
+		 moveUp = true;
+		 repaint();
+		 break;
+	 }
+	 //cases with a w x d j and q don't work
+  }
 
- 	@Override
- 	public void keyPressed(KeyEvent p) {
- 	}
+  @Override
+  public void keyPressed(KeyEvent p) {
+  }
 
- 	@Override
- 	public void keyTyped(KeyEvent t) {
- 	}
+  @Override
+  public void keyTyped(KeyEvent t) {
+  }
 }
