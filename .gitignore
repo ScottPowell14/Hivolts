@@ -51,4 +51,24 @@ public class You extends JPanel
        return yCorn;
     }
     
+    public int moveLeft() {
+    	xCorn -= 75;
+    	return xCorn;
+    }
+    
+    public int moveRight() {
+    	xCorn += 75;
+    	return xCorn;
+    }
+    
+    public int moveUp() {
+    	yCorn -= 75;
+    	return yCorn;
+    }
+    
+    public int moveDown() {
+    	yCorn += 75;
+    	return yCorn;
+    }
+    
 }
