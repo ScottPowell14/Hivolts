@@ -53,29 +53,29 @@ public class HivoltsGameBoard extends JFrame implements KeyListener
              	} */
         	}
         	
-         }
-        if (moveLeft == true) { 
+        }
+        else if (moveLeft == true) { 
         	 if (you.returnxCorn() != 100) {
         		 you.moveLeft();
         	 }
         	 moveLeft = false;
         	 you.paint(g);
         }
-         if (moveRight == true) { 
+        else if (moveRight == true) { 
         	 if (you.returnxCorn() != 925) {
         		 you.moveRight();
         	 }
         	 moveRight = false;
         	 you.paint(g);
          }
-         if (moveUp == true) {
+         else if (moveUp == true) {
         	 if (you.returnyCorn() != 100) {
         		 you.moveUp();
         	 }
         	 moveUp = false;
         	 you.paint(g);
          }
-         if (moveDown == true) {
+         else if (moveDown == true) {
         	 if (you.returnyCorn() != 925) {
         		 you.moveDown();
         	 }
