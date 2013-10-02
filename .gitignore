@@ -1,9 +1,54 @@
-*.class
+import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.util.Random;
+public class You extends JPanel
+{
+	private int xCorn;
+    private int yCorn;
+    private Random generator;
+    public You() 
+    {
+       setSize(1100, 1100);
+       repaint();
+    }
 
-# Package Files #
-*.jar
-*.war
-*.ear
+    public void paint(Graphics g) 
+    {
+       generator = new Random();
+       xCorn = 175 + 75 * generator.nextInt(11);
+       yCorn = 100 + 75 * generator.nextInt(11);
 
-// Hello
-// Hii
+       //when we begin playing, we'll deal with where you are
+       //but for now we'll let them be 100 and 175 so that
+       //it can go in the second box
+
+       
+       
+       g.setColor(Color.BLACK);
+       g.fillOval(xCorn + 5, yCorn + 5, 65, 65);
+       g.setColor(Color.ORANGE);
+       g.drawOval(xCorn + 5, yCorn + 5, 65, 65);
+       g.drawArc(xCorn + 15, yCorn + 10, 45, 45, 210, 120);
+       g.fillRect(xCorn + 21, yCorn + 20, 7, 7);
+       g.fillRect(xCorn + 47, yCorn + 20, 7, 7);
+       g.fillRect(xCorn + 34, yCorn + 34, 7, 7);
+    }
+
+  
+
+  //these methods are useful for when we want to know your
+
+  //location
+
+    public int returnxCorn() 
+    {
+       return xCorn;
+    }
+
+    public int returnyCorn() 
+    {
+       return yCorn;
+    }
+    
+}
