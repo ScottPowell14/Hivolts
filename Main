@@ -1,0 +1,10 @@
+public class HivoltsBoard
+{
+   public static void main(String[] args)
+   {
+	   HivoltsGameBoard newGameBoard = new HivoltsGameBoard();
+	   newGameBoard.setDefaultCloseOperation(newGameBoard.EXIT_ON_CLOSE);
+	   newGameBoard.setSize(1100, 1100);
+	   newGameBoard.setVisible(true);
+   }
+}
