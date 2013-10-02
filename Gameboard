@@ -1,1 +1,138 @@
-// Gameboard
+import java.awt.*;
+
+import javax.swing.JFrame;
+import java.util.Random;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.ComponentEvent;
+
+public class HivoltsGameBoard extends JFrame implements KeyListener
+{
+
+	public boolean moveLeft, moveUp, moveRight, moveDown = false;	
+	public boolean firstPaint = true;
+	public static You you;
+	private Mhos[] mhos;
+	
+	public HivoltsGameBoard() {
+		init();
+	}
+
+
+	public void init() {
+		this.addKeyListener(this);   
+		repaint();
+	}
+
+	@Override
+	public void paint(Graphics g)
+	{	 
+		g.setColor(Color.WHITE);
+		g.fillRect(0, 0, 1100, 1100);
+	 	g.setColor(Color.BLACK); 
+        
+	 	for (int i = 0; i < 13; i++) {
+	 		g.drawLine(100 + i * 75, 100, 100 + i * 75, 1000);
+            g.drawLine(100, 100 + i * 75, 1000, 100 + i  *75);
+        }
+
+        if (firstPaint == true) {
+        	you = new You();
+        	you.firstPaint = true;
+        	you.paint(g);
+
+        	mhos = new Mhos[12];
+         
+        	for (int i = 0; i < 12; i++) {
+        		mhos[i] = new Mhos();
+        		mhos[i].paint(g);
+
+        		/* if (mhos[i].returnxCorn() == you.returnxCorn() && mhos[i].returnyCorn() ==     you.returnyCorn()) {
+                 	mhos[i].repaint();
+                 	you.repaint();
+             	} */
+        	}
+        	
+         }
+        if (moveLeft == true) { 
+        	 if (you.returnxCorn() != 100) {
+        		 you.moveLeft();
+        	 }
+        	 moveLeft = false;
+        	 you.paint(g);
+        }
+         if (moveRight == true) { 
+        	 if (you.returnxCorn() != 925) {
+        		 you.moveRight();
+        	 }
+        	 moveRight = false;
+        	 you.paint(g);
+         }
+         if (moveUp == true) {
+        	 if (you.returnyCorn() != 100) {
+        		 you.moveUp();
+        	 }
+        	 moveUp = false;
+        	 you.paint(g);
+         }
+         if (moveDown == true) {
+        	 if (you.returnyCorn() != 925) {
+        		 you.moveDown();
+        	 }
+        	 moveDown = false;
+        	 you.paint(g);
+         }
+        
+        
+     }     
+	
+          //this is supposed to test to see if two mhos land on the same space, then repaint them elsewhere if that happens, but it doesn’t really work the way I wanted it to...
+
+     /**
+
+     int i = generator.nextInt(12);
+     int j = generator.nextInt(12);
+     
+     if (mhos[i].returnxCorn() == mhos[j].returnxCorn() && mhos[i].returnyCorn() ==      mhos[j].returnyCorn()) {
+         mhos[i].repaint();
+         mhos[j].repaint();
+     }
+*/
+
+ @Override
+
+ 	public void keyReleased(KeyEvent r) {
+	 	int key = r.getKeyCode();
+	 	switch (key){
+	 	case KeyEvent.VK_LEFT:
+	 	case 'q':
+	 		moveLeft = true;
+	 		firstPaint = false;
+	 		you.firstPaint = false;
+	 		repaint();
+	 	case KeyEvent.VK_UP:
+	 		moveUp = true;
+	 		firstPaint = false;
+	 		you.firstPaint = false;
+	 		repaint();
+	 	case KeyEvent.VK_DOWN:
+	 		moveDown = true;
+	 		firstPaint = false;
+	 		you.firstPaint = false;
+	 		repaint();
+	 	case KeyEvent.VK_RIGHT:
+	 		moveRight = true;
+	 		firstPaint = false;
+	 		you.firstPaint = false;
+	 		repaint();
+	 	}
+ 	}
+
+ 	@Override
+ 	public void keyPressed(KeyEvent p) {
+ 	}
+
+ 	@Override
+ 	public void keyTyped(KeyEvent t) {
+ 	}
+}
